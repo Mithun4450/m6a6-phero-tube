@@ -26,9 +26,9 @@ const displayCards = async (id) =>{
         const div = document.createElement('div');
         div.innerHTML = `
         <div class="card bg-base-100 rounded-lg h-96">
-            <div class="image-full">
-                <figure><img class = "w-full h-40 rounded-lg" src="${details.thumbnail}" alt="" /></figure>
-                <div class="time"><h3>${details.others.posted_date}</h3></div>
+            <div class="relative">
+                <figure><img class = "w-full h-40 rounded-lg z-0" src="${details.thumbnail}" alt="" /></figure>
+                <div class="time bg-black text-white w-24 p-1 rounded-lg z-10 absolute bottom-2 right-2"><h3>${details.others.posted_date}</h3></div>
             </div>
             <div class="card-body">
                 <div class="flex gap-4">
