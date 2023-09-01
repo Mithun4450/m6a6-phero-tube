@@ -28,7 +28,10 @@ const displayCards = async (id) =>{
         <div class="card bg-base-100 rounded-lg h-96">
             <div class="relative">
                 <figure><img class = "w-full h-40 rounded-lg z-0" src="${details.thumbnail}" alt="" /></figure>
-                <div class="time bg-black text-white w-24 p-1 rounded-lg z-10 absolute bottom-2 right-2"><h3>${details.others.posted_date}</h3></div>
+                <div class="z-10 absolute bottom-2 right-2">${details.others.posted_date? `<div class="time bg-black text-white w-52 text-center p-1 rounded-lg "><h3><span>${((details.others.posted_date)-(details.others.posted_date%3600))/3600}</span>hrs <span>${((details.others.posted_date%3600)/60).toFixed(0)}</span>min ago</h3></div>`: ''}
+                
+                </div>
+                
             </div>
             <div class="card-body">
                 <div class="flex gap-4">
