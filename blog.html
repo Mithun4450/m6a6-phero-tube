@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header>
+        <!-- nav bar -->
+        <div class="navbar bg-base-100 my-4 gap-4">
+            <div class="navbar-start ml-8">
+              
+              <img src="Logo.png" alt="">
+
+            </div>
+            
+            
+            <div class="navbar-end mr-8">
+                <button onclick="goToPHeroTubePage()" class="btn">Main Page</button>
+            </div>
+            
+        </div>
+        <hr class=" ml-8 mr-8">
+    </header>
+    <div class="shadow-2xl text-justify w-4/5 mx-auto my-7 rounded-lg p-6">
+        <h1 class="text-2xl font-bold">Discuss the scope of var, let, and const</h1>
+        <P>
+            In case of variable declared by var, it can be re-declared. New value can be re-assigned to previously declared variable by var. Variable declared by let can not be re-declared but it can be re-assigned with new value. But value of const can not be re-declared and re-assigned. 
+
+            Variable declared by var has the scope of global level while variables declared by both let and const have block level scope.
+
+            Variable declared by var can be hoisted that means it can move to the top of its containing function. But variables declared by both let and const  are not hoisted, that means they are only accessible after the point of declaration.
+
+
+        </P>
+        
+    </div>
+    <div class="shadow-2xl text-justify w-4/5 mx-auto my-7 rounded-lg p-6">
+        <h1 class="text-2xl font-bold">
+            Tell us the use cases of null and undefined
+            
+        </h1>
+        <P>
+            There are 8 ways or cases when we can find undefined. These are as follows: <br>
+
+                1. Variable that is not initialized will give undefined.
+                    For example: 
+                    let x;
+                    console.log(x); <br>
+                
+                2. Function with no return will give undefined.
+                   For example:
+                   function add(a, b){
+                        const total = a + b;
+                    }
+                    const result = add();
+                    console.log(result); <br>
+
+
+                3. Parameter that is not passed will be undefined.
+                    For example:
+                    function para(a, b, c, d){
+                        console.log(a, b, c, d)
+                    }
+                    para(5, 7) <br>
+
+
+                4. If return has nothing on the right side will return undefined.
+                    For example:
+                    function noNegative(a, b){
+                        if(a < 0 || b < 0){
+                            return
+                        }
+                        return a + b;
+                    }
+                    const total = noNegative(2, -5);
+                    console.log(total); <br>
+
+
+                5. Property that does not exist in the object will give undefined.
+                    For example:
+                    const fifth = {id: 2, name: 'ponchom', age: 40}
+                    console.log(fifth.age, fifth.salary); <br>
+
+
+                 6. Index number that does not exist in the array will give undefined.
+                    For example:
+                    const sixth = [4, 89, 87, 56, 54];
+                    console.log(sixth[1], sixth[5], sixth[200]);  <br>
+
+
+                 7. Deleting an element inside an array. if we explicitly delete element of specific index number that we called will give undefined. we should not explicitly delete. we can use splice.
+                    For example:   
+                    const seventh = [4, 89, 87, 56, 54];
+                    delete seventh[1];
+                    console.log(seventh[1], seventh[5], seventh[200]); 
+                    console.log(seventh) <br>
+
+
+                8. Set a value directly to undefined will give undefined.
+                    For example:
+                   const eighth = undefined; <br>
+
+                <br>
+                To indicate 'there in no value', we should use null. we should not use undefined.
+                For example: 
+                const ninth = null;
+
+                const data = {results: [], updated: null};
+
+                console.log(typeof undefined);
+                console.log(typeof null);
+
+
+        </P>
+        
+    </div>
+    <div class="shadow-2xl text-justify w-4/5 mx-auto my-7 rounded-lg p-6">
+        <h1 class="text-2xl font-bold">
+            What do you mean by REST API?
+        </h1>
+        <P>
+            REST API stands for Representational State Transfer Application Programming Interface. It is a set of principles, rules and constraints for designing and interacting with web services. These principles and rules are commonly used in web development. These are used to expose and consume data and services over the internet. These are followed during data exchange between client and server. 
+          
+        </P>
+        
+    </div>
+    
+    <script src="tube.js"></script>
+</body>
+</html>

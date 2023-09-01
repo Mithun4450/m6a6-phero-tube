@@ -146,6 +146,15 @@ const makeDescendingOrder = async (idAll) =>{
 }) }
 
 
+const goToBlogPage = () =>{
+    window.location.href = "blog.html"
+}
+
+const goToPHeroTubePage = () =>{
+    window.location.href = "index.html"
+}
+
+
 
 
 
