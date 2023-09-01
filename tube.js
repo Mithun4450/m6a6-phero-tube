@@ -92,15 +92,10 @@ const displayCards = async (id) =>{
 const makeDescendingOrder = async (idAll) =>{
     const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${idAll}`);
     const data = await res.json();
-    // console.log(data.data)
-    // const newArray = data.data.map(element => element.others.views.slice(0, -1));
-    // console.log(newArray);
-    // const sortedArray = newArray.sort((a, b) => b - a);
-    // console.log(sortedArray);
-
+        
     const sortedArrayOfObject = data.data.sort((a, b) => b.others.views.slice(0, -1) - a.others.views.slice(0, -1));
     
-    console.log(sortedArrayOfObject);
+    // console.log(sortedArrayOfObject);
 
    const cardsContainer = document.getElementById('cards-container');
    cardsContainer.innerHTML = "";
