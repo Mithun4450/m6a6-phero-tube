@@ -70,10 +70,16 @@ const displayCards = async (id) =>{
         const sorryDiv = document.createElement('div');
         sorryDiv.innerHTML = `
 
-        <h2>sorry</h2>
+        <img class="" src="Icon.png" alt="" />
+
+        <h2 class="">Oops!! Sorry, There is no <br> content here</h2>
         
         `
+        
         cardsContainer.appendChild(sorryDiv);
+        
+        
+        
     }
     
 }
