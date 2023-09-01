@@ -20,6 +20,8 @@ const displayCards = async (id) =>{
     // console.log(data.data.length)
     const cardsContainer = document.getElementById('cards-container');
     cardsContainer.innerHTML = "";
+    sorryContainer = document.getElementById('sorry-card-container');
+    sorryContainer.innerHTML = "";
     
     if(data.data.length > 0){
         data.data.forEach((details) =>{
@@ -67,16 +69,17 @@ const displayCards = async (id) =>{
         })
     }
     else{
+        
         const sorryDiv = document.createElement('div');
         sorryDiv.innerHTML = `
 
-        <img class="" src="Icon.png" alt="" />
+        <img class="mx-auto" src="Icon.png" alt="" />
 
-        <h2 class="">Oops!! Sorry, There is no <br> content here</h2>
+        <h2 class="text-2xl font-bold">Oops!! Sorry, There is no <br> content here</h2>
         
         `
         
-        cardsContainer.appendChild(sorryDiv);
+        sorryContainer.appendChild(sorryDiv);
         
         
         
