@@ -6,7 +6,7 @@ const createCategoryButton = async () =>{
     data.data.forEach((category) =>{
         const div = document.createElement('div');
         div.innerHTML = `
-        <button onclick ="displayCards('${category.category_id}')" class="btn w-24">${category.category}</button>
+        <button onclick ="displayCards('${category.category_id}')" class="btn w-44 md:w-24 lg:w-24">${category.category}</button>
         `;
         categoryButtonContainer.appendChild(div);
         
@@ -19,22 +19,24 @@ const displayCards = async (id) =>{
     const data = await res.json();
     console.log(data.data)
     const cardsContainer = document.getElementById('cards-container');
+    
+
     data.data.forEach((details) =>{
         console.log(details.authors[0].profile_picture)
         const div = document.createElement('div');
         div.innerHTML = `
-        <div class="card bg-base-100 shadow-xl">
+        <div class="card bg-base-100 rounded-lg h-96">
             <div class="image-full">
-                <figure><img class = "h-40" src="${details.thumbnail}" alt="" /></figure>
+                <figure><img class = "w-full h-40 rounded-lg" src="${details.thumbnail}" alt="" /></figure>
                 <div class="time"><h3>${details.others.posted_date}</h3></div>
             </div>
             <div class="card-body">
-                <div class="flex">
+                <div class="flex gap-4">
                     <div class="author-image"><img class="w-10 h-10 rounded-full" src="${details.authors[0].profile_picture
                     }" alt="" /></div>
                     <div><h2 class="card-title">${details.title}</h2></div>
                 </div>
-                <div class="flex">
+                <div class="flex gap-4 ml-14 ">
                     <div><h2 class="author-name">${details.authors[0].profile_name}</h2></div>
                     <div class="verified-image, w-5 h-5 rounded-full">${details.authors[0].verified? `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                     <g clip-path="url(#clip0_11_34)">
@@ -49,12 +51,12 @@ const displayCards = async (id) =>{
                   </svg>` : "" }</div>
                     
                 </div>
-                <div class="views">${details.others.views} <span>views</span></div>
+                <div class="views ml-14">${details.others.views} <span>views</span></div>
                 
             </div>
         </div>
         `
-
+                 
         cardsContainer.appendChild(div);
     })
 }
